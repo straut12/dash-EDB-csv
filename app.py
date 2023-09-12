@@ -1,7 +1,6 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 
-import pytz
 import dash                               # installed odfpy for excel/ods reading
 import dash_bootstrap_components as dbc  # installed dash_bootstrap_templates too
 from dash import dcc, html
@@ -121,8 +120,3 @@ def generate_chart(y):
 
 if __name__ == '__main__':
     app.run_server(debug=True)
-
-# Other ways to modify layout
-    #dbc.Container([table], className="m-4 dbc"),
-    #dt.DataTable(data=dfsummary.to_dict('records'), page_size=10),
-    #dt.DataTable(data=df.describe(), columns=[{"name": i, "id": i} for i in df.describe().columns]),
