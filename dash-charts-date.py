@@ -22,7 +22,7 @@ from dash.dependencies import Input, Output
 #df = pd.read_excel('dht11-temp-data2.ods', engine='odf')
 # Manually created date column in spreadsheet and truncated to day only (no H:M). 
 # Tried pd.to_datetime(df['_time'], format="%Y-%m-%d").dt.floor("d") but it left .0000000 for the H:M. May have been ok.
-df = pd.read_csv('dht11-temp-data.csv').assign(date=lambda data: pd.to_datetime(data["date"], format="%Y-%m-%d"))
+df = pd.read_csv('dht11-temp-data').assign(date=lambda data: pd.to_datetime(data["date"], format="%Y-%m-%d")) # was not uploading with csv extension
 df['location'] = df['location'].astype('str') # chart was not working because this was read as an int. had to convert to str
 # DO NOT USE 1,2,3 for labels. Can have confusing results due to int vs str scenarios
 
